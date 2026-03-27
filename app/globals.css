@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+
+  --background: 0 0% 100%;
+  --foreground: 0 0% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 3.9%;
+  --primary: 223 82% 51%;  /* Navy */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 180 82% 48%; /* Teal */
+  --secondary-foreground: 0 0% 9%;
+  --accent: 42 100% 57%;  /* Amber */
+  --accent-foreground: 0 0% 9%;
+  --muted: 0 0% 96.1%;
+  --muted-foreground: 0 0% 45.1%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 89.8%;
+  --input: 0 0% 89.8%;
+  --ring: 223 82% 51%;
+  --chart-1: 223 82% 51%;
+  --chart-2: 180 82% 48%;
+  --chart-3: 42 100% 57%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 223 82% 11%;
+  --foreground: 0 0% 98%;
+  --card: 223 82% 15%;
+  --card-foreground: 0 0% 98%;
+  --popover: 223 82% 15%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 223 82% 71%;
+  --primary-foreground: 0 0% 9%;
+  --secondary: 180 82% 58%;
+  --secondary-foreground: 0 0% 9%;
+  --accent: 42 100% 67%;
+  --accent-foreground: 0 0% 9%;
+  --muted: 223 82% 25%;
+  --muted-foreground: 0 0% 63.9%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 223 82% 25%;
+  --input: 223 82% 25%;
+  --ring: 223 82% 71%;
+  --chart-1: 220 70% 50%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans tracking-tight;
+  }
+  p, li {
+    @apply font-serif leading-relaxed;
+  }
+}
+
+.glass-card {
+  @apply bg-white/70 backdrop-blur-md border border-white/30 rounded-xl shadow-glass;
+}
+
+.glass-card-dark {
+  @apply bg-navy-900/70 backdrop-blur-md border border-navy-700/30 rounded-xl shadow-glass;
+}
+
+.particles-container {
+  @apply absolute inset-0 overflow-hidden pointer-events-none;
+}
+
+.particles-container .particle {
+  @apply absolute rounded-full bg-teal-500/30 animate-pulse-slow;
+}
+
+@media (prefers-reduced-motion) {
+  .animate-float, .animate-pulse-slow, .animate-rotate-slow {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
